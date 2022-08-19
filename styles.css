@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    background-color: hsl(216, 12%, 8%);
+}
+#rating-bg{
+    width: 300px;
+    height: 200px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 20px;
+    margin: 50% auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+#rating-contents{
+    width: 80%;
+    margin: 0 auto;
+}
+h1{
+    color: hsl(0, 0%, 100%);
+}
