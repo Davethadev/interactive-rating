@@ -4,8 +4,8 @@ const twoStar = document.querySelector(".two")
 const threeStar = document.querySelector(".three")
 const fourStar = document.querySelector(".four")
 const fiveStar = document.querySelector(".five")
-
-let objectName = {oneStar, twoStar, threeStar, fourStar, fiveStar}
+const select = document.getElementById("selection")
+const objectName = {oneStar, twoStar, threeStar, fourStar, fiveStar}
 
 function displayStar(star){
     star.addEventListener("click", function(){
@@ -81,5 +81,3 @@ displayStar(twoStar)
 displayStar(threeStar)
 displayStar(fourStar)
 displayStar(fiveStar)
-
-console.log(starRating)
