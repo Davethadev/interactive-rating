@@ -1,12 +1,17 @@
 const starRating = document.getElementById("star-rating")
-const oneRate = document.querySelector(".one")
-const twoRate = document.querySelector(".two")
-const threeRate = document.querySelector(".three")
-const fourRate = document.querySelector(".four")
-const fiveRate = document.querySelector(".five")
+const oneStar = document.querySelector(".one")
+const twoStar = document.querySelector(".two")
+const threeStar = document.querySelector(".three")
+const fourStar = document.querySelector(".four")
+const fiveStar = document.querySelector(".five")
 
-oneRate.addEventListener("click", function () {
-    starRating.innerHTML = `<div id="star" class="one-star">
+let objectName = {oneStar, twoStar, threeStar, fourStar, fiveStar}
+
+function displayStar(star){
+    star.addEventListener("click", function(){
+        for(elements in objectName){
+            if(objectName[elements] == star && star.className == "one"){
+                starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="two-star">
@@ -14,9 +19,8 @@ oneRate.addEventListener("click", function () {
                 <div id="star" class="three-star"></div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
-})
-twoRate.addEventListener("click", function () {
-    starRating.innerHTML = `<div id="star" class="one-star">
+            }else if(objectName[elements] == star && star.className == "two"){
+                starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="two-star">
@@ -25,9 +29,8 @@ twoRate.addEventListener("click", function () {
                 <div id="star" class="three-star"></div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
-})
-threeRate.addEventListener("click", function () {
-    starRating.innerHTML = `<div id="star" class="one-star">
+            }else if(objectName[elements] == star && star.className == "three"){
+                starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="two-star">
@@ -38,9 +41,8 @@ threeRate.addEventListener("click", function () {
                 </div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
-})
-fourRate.addEventListener("click", function () {
-    starRating.innerHTML = `<div id="star" class="one-star">
+            }else if(objectName[elements] == star && star.className == "four"){
+                starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="two-star">
@@ -53,9 +55,8 @@ fourRate.addEventListener("click", function () {
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="five-star"></div>`
-})
-fiveRate.addEventListener("click", function () {
-    starRating.innerHTML = `<div id="star" class="one-star">
+            }else if(objectName[elements] == star && star.className == "five"){
+                starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="two-star">
@@ -70,4 +71,15 @@ fiveRate.addEventListener("click", function () {
                 <div id="star" class="five-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>`
-})
+            }
+        }
+    })
+}
+
+displayStar(oneStar)
+displayStar(twoStar)
+displayStar(threeStar)
+displayStar(fourStar)
+displayStar(fiveStar)
+
+console.log(starRating)
