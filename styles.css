@@ -70,3 +70,18 @@ p{
     color: hsl(25, 97%, 53%);
     background-color:hsl(0, 0%, 100%);
 }
+#star-rating{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid white; */
+}
+#star{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:hsla(216, 12%, 8%, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
