@@ -7,7 +7,9 @@ const fiveStar = document.querySelector(".five")
 const select = document.getElementById("selection")
 const objectName = {oneStar, twoStar, threeStar, fourStar, fiveStar}
 const submitButton = document.getElementById("submit-btn")
-let numberSelected = localStorage.setItem("number", "")
+localStorage.setItem("number", null)
+// let numberSelected = JSON.parse(localStorage.getItem("number"))
+// console.log(numberSelected)
 
 function displayStar(star){
     star.addEventListener("click", function(){
@@ -21,8 +23,11 @@ function displayStar(star){
                 <div id="star" class="three-star"></div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
-                localStorage.setItem("number", JSON.stringify(1))
-                console.log(localStorage.getItem("number"))
+                // localStorage.removeItem(in DOMString "number")
+                localStorage.clear()
+                localStorage.setItem("number", "1")
+                // numberSelected = localStorage.getItem("number")
+                // numberSelected = JSON.parse(localStorage.getItem("number"))
             }else if(objectName[elements] == star && star.className == "two"){
                 starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
@@ -33,6 +38,8 @@ function displayStar(star){
                 <div id="star" class="three-star"></div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
+                localStorage.clear()
+                localStorage.setItem("number", "2")
                 
             }else if(objectName[elements] == star && star.className == "three"){
                 starRating.innerHTML = `<div id="star" class="one-star">
@@ -46,7 +53,8 @@ function displayStar(star){
                 </div>
                 <div id="star" class="four-star"></div>
                 <div id="star" class="five-star"></div>`
-                
+                localStorage.clear()
+                localStorage.setItem("number", "3")
             }else if(objectName[elements] == star && star.className == "four"){
                 starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
@@ -61,7 +69,8 @@ function displayStar(star){
                     <img src="./images/icon-star.svg" alt="">
                 </div>
                 <div id="star" class="five-star"></div>`
-                
+                localStorage.clear()
+                localStorage.setItem("number", "4")
             }else if(objectName[elements] == star && star.className == "five"){
                 starRating.innerHTML = `<div id="star" class="one-star">
                     <img src="./images/icon-star.svg" alt="">
@@ -78,16 +87,22 @@ function displayStar(star){
                 <div id="star" class="five-star">
                     <img src="./images/icon-star.svg" alt="">
                 </div>`
-                
+                localStorage.clear()
+                localStorage.setItem("number", "5")
             }
         }
     })
 }
-
+// Here's the problem, the local storage value is not changing in the
+//console so that the displaySelcectedNumber function's if/else statement can work.
 function displaySelectedNumber(submitBtn){
     submitBtn.addEventListener("click", function(){
-        if(localStorage.getItem("number") == 1)
+        if(localStorage.getItem("number") == 1){
             select.innerHTML = `<p>You selected 1 out of 5</p>`
+        }else if(localStorage.get("number") == 2){
+            select.innerHTML = `<p>You selected 2 out of 5</p>`
+        }
+        // ...
     })
 }
 
